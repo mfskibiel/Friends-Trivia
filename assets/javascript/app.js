@@ -2,6 +2,10 @@ $("#start").on("click", function () {
     game.start();
 })
 
+$(document).on("click", "#end", function () {
+    game.done();
+})
+
 var questionsArray = [{
     question: "Which two characters are brother and sister?",
     answers: ["Joey and Rachel", "Ross and Phoebe", "Ross and Monica", "Joey and Monica"],
@@ -39,7 +43,7 @@ var questionsArray = [{
 var game = {
     correct: 0,
     incorrect: 0,
-    counter: 120,
+    counter: 20,
     countdown: function () {
         game.counter--;
         $("#counter").html(game.counter); //need to create this
@@ -58,6 +62,7 @@ var game = {
                 $("#subwrapper").append("<input type='radio' name='question-" + i + "' value='" + questionsArray[i].answers[y] + "'>" + questionsArray[i].answers[y])
             }
         }
+        $("#subwrapper").append("<br><button id='end'>DONE</button>")
     },
     done: function () {
         $.each($("input[name='question-0]':checked"), function () {
@@ -95,5 +100,37 @@ var game = {
                 game.incorrect++;
             }
         });
+        $.each($("input[name='question-5]':checked"), function () {
+            if ($(this).val() == questionsArray[5].correctAnswer) {
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+        $.each($("input[name='question-6]':checked"), function () {
+            if ($(this).val() == questionsArray[6].correctAnswer) {
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+        $.each($("input[name='question-7]':checked"), function () {
+            if ($(this).val() == questionsArray[7].correctAnswer) {
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+
+        this.result();
+    },
+    result: function () {
+        clearInterval(timer);
+        $("#subwrapper h2").remove();
+
+        $("#subwrapper").html("<h2>All done!</h2>")
+        $("#subwrapper").append("<h3>Correct Answers: " + this.correct + "</h3>");
+        $("#subwrapper").append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
+        $("#subwrapper").append("<h3>Unanswered: " + (questionsArray.length - (this.incorrect + this.correct)) + "</h3>");
     }
 }
