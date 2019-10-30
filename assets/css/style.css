@@ -1,3 +1,7 @@
+body {
+    background-image: url("assets/images/friends.jpg");
+}
+
 #title {
     font-family: 'Permanent Marker', cursive;
     background-color: darkcyan;
@@ -7,9 +11,6 @@
 }
 
 #wrapper {
-    width: 100%;
-    height: 100%;
-    background-image: "background.jpg";
     text-align: center;
 }
 
