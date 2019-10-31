@@ -1,13 +1,19 @@
 body {
-    background-image: url("assets/images/friends.jpg");
+    background-image: url(../images/fadedimage.png);
+
 }
 
 #title {
     font-family: 'Permanent Marker', cursive;
-    background-color: darkcyan;
-    color: white;
-    font-size: 50px;
-    padding: 30px;
+    background-color: lightsalmon;
+    color: black;
+    padding: 10px;
+    border: 10px solid black;
+    font-size: 70px;
+    border-radius: 25px;
+    width: 75%;
+    margin: auto; 
+    margin-top: 30px;
 }
 
 #wrapper {
@@ -15,7 +21,68 @@ body {
 }
 
 #start {
-    background: red;
+    background:navy;
+    color: yellow;
+    border: 10px solid black;
     font-family: 'Permanent Marker', cursive;
-    font-size: 12px;
+    font-size: 50px;
+    padding: 10px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+#start:hover {
+    color: lightsteelblue;
+}
+
+#end {
+    background:navy;
+    color: yellow;
+    border: 10px solid black;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 25px;
+}
+
+#end:hover {
+    color: lightsteelblue;
+}
+
+#subwrapper {
+    background-color: lightgoldenrodyellow;
+    margin: 30px;
+    border-radius: 25px;
+}
+
+h2 {
+    font-size: 20px;
+    font-family:'Permanent Marker', cursive;
+    padding: 10px;
+}
+
+input {
+    font-family:'Permanent Marker', cursive;
+}
+
+p {
+    font-family: 'Permanent Marker', cursive;
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#instructions {
+    background-color: lightgoldenrodyellow;
+    width: 57%;
+    margin: auto;
+    border-radius: 25px;
+    border: 10px solid black;
+}
+
+h3 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    padding: 10px;
 }
